@@ -71,7 +71,6 @@
                 ref
 -->
 <!--    配置一个日期对象-->
-
     <bean id="now" class="java.util.Date"></bean>
     <bean id="accountService" class="com.chanx.examples.service.impl.AccountServiceImpl" >
         <constructor-arg name="name" value="test"></constructor-arg>
