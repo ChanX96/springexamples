@@ -25,18 +25,21 @@ public class Client {
         *  BeanFactory：多例对象适用。
         *       创建核心容器时延迟加载。
         * */
-//        ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
+        ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
 //        ApplicationContext ac = new FileSystemXmlApplicationContext("D:\\code\\web\\spring\\src\\main\\resources\\bean.xml");
-        Resource resource = new ClassPathResource("bean.xml");
-        BeanFactory factory = new XmlBeanFactory(resource);
+//        Resource resource = new ClassPathResource("bean.xml");
+//        BeanFactory factory = new XmlBeanFactory(resource);
 
         // 2. 根据id获取bean对象
-//        AccountService as = (AccountService)ac.getBean("accountService");
-//        AccountDao ad = ac.getBean("accountDao", AccountDao.class);
-        AccountService as = (AccountService)factory.getBean("accountService");
-        AccountDao ad = factory.getBean("accountDao", AccountDao.class);
+        AccountService as = (AccountService)ac.getBean("accountService");
+        AccountDao ad = ac.getBean("accountDao", AccountDao.class);
+//        AccountService as = (AccountService)factory.getBean("accountService");
+//        AccountDao ad = factory.getBean("accountDao", AccountDao.class);
 
         System.out.println(as);
         System.out.println(ad);
+
+        // 手动关闭容器
+        ac.close();
     }
 }

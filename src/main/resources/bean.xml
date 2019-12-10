@@ -5,7 +5,44 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
 <!--    控制反转，把对象交给spring管理-->
-    <bean id="accountService" class="com.chanx.examples.service.impl.AccountServiceImpl"></bean>
-
+<!--    spring对bean的管理细节
+        1. 创建bean的三种方式
+        2. bean对象的作用范围
+        3. bean对象的声明周期
+-->
+<!--    创建bean的三种方式-->
+<!--    第一种方式，使用默认构造函数创建。在spring配置文件中使用bean标签配以id和class属性后，没有其他属性和标签时，没有默认构造函数则创建失败-->
+<!--    <bean id="accountService" class="com.chanx.examples.service.impl.AccountServiceImpl"></bean>-->
     <bean id="accountDao" class="com.chanx.examples.dao.impl.AccountDaoImpl"></bean>
+
+<!--    第二种方式，使用普通工厂中的方法创建对象（使用某个类中的方法创建对象并存入spring容器）-->
+<!--    <bean id="instanceFactory" class="com.chanx.examples.factory.InstanceFactory"></bean>-->
+<!--    <bean id="accountService" factory-bean="instanceFactory" factory-method="getAccountService"></bean>-->
+
+<!--    第三种的方式，使用工厂中的静态方法创建对象（使用某个类中的静态方法创建对象，并存入spring容器）-->
+<!--    <bean id="accountService" class="com.chanx.examples.factory.InstanceFactory" factory-method="getAccountService"></bean>-->
+
+<!--    bean的作用范围调整
+            bean标签scope属性，用于指定bean的作用范围
+            取值：
+                singleton: 单例（默认值）。
+                prototype: 多例。
+                request: 作用于web应用的请求范围。
+                session: 作用于web应用的会话范围。
+                global-session: 作用于集群环境的会话范围(全局范围)，当不是集群环境是，session。
+-->
+<!--    <bean id="accountService" class="com.chanx.examples.factory.InstanceFactory" factory-method="getAccountService" scope="singleton"></bean>-->
+
+<!--    bean的生命周期
+            单例
+                创建：当容器创建时
+                存在：与容器同周期
+                死亡：容器销毁
+            多例：
+                创建：spring框架创建
+                存在：对象使用过程中
+                死亡：对象调用close方法或被gc时
+-->
+<!--    <bean id="accountService" class="com.chanx.examples.service.impl.AccountServiceImpl" scope="singleton" init-method="init" destroy-method="destroy"></bean>-->
+    <bean id="accountService" class="com.chanx.examples.service.impl.AccountServiceImpl" scope="prototype" init-method="init" destroy-method="destroy"></bean>
 </beans>
