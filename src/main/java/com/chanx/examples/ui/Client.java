@@ -40,6 +40,6 @@ public class Client {
         System.out.println(ad);
 
         // 手动关闭容器
-        ac.close();
+//        ac.close();
     }
 }

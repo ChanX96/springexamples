@@ -10,7 +10,7 @@ public class InstanceFactory {
 //        return new AccountServiceImpl(1);
 //    }
 
-    public static AccountService getAccountService() {
-        return new AccountServiceImpl();
-    }
+//    public static AccountService getAccountService() {
+//        return new AccountServiceImpl();
+//    }
 }
