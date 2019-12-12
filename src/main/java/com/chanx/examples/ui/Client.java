@@ -36,7 +36,7 @@ public class Client {
 //        AccountService as = (AccountService)factory.getBean("accountService");
 //        AccountDao ad = factory.getBean("accountDao", AccountDao.class);
 
-        System.out.println(as);
+        as.saveAccount();
         System.out.println(ad);
 
         // 手动关闭容器
