@@ -94,10 +94,31 @@
         弊端：
             如果某个成员必须有值，则获取set方法无法保证一定注入。
 -->
-    <bean id="now" class="java.util.Date"></bean>
-    <bean id="accountService" class="com.chanx.examples.service.impl.AccountServiceImpl1" >
-        <property name="name" value="泰瑟特"></property>
+<!--    <bean id="now" class="java.util.Date"></bean>-->
+<!--    <bean id="accountService" class="com.chanx.examples.service.impl.AccountServiceImpl1" >-->
+<!--        <property name="name" value="泰瑟特"></property>-->
 <!--        <property name="age" value="20"></property>-->
-        <property name="birthday" ref="now"></property>
+<!--        <property name="birthday" ref="now"></property>-->
+<!--    </bean>-->
+<!--    复杂类型的注入/集合类型的注入
+            用于给list集合注入的标签：
+                list array set
+            用于给map集合注入的标签：
+                map props
+            结构相同，标签可以互换
+-->
+    <bean id="accountService" class="com.chanx.examples.service.impl.AccountServiceImpl2" >
+        <property name="myStrs">
+            <array>
+                <value>AAA</value>
+                <value>AAA</value>
+                <value>AAA</value>
+            </array>
+        </property>
+        <property name="myMap">
+            <map>
+                <entry key="1" value="AAA"></entry>
+            </map>
+        </property>
     </bean>
 </beans>
