@@ -13,7 +13,7 @@
 <!--    创建bean的三种方式-->
 <!--    第一种方式，使用默认构造函数创建。在spring配置文件中使用bean标签配以id和class属性后，没有其他属性和标签时，没有默认构造函数则创建失败-->
 <!--    <bean id="accountService" class="com.chanx.examples.service.impl.AccountServiceImpl"></bean>-->
-    <bean id="accountDao" class="com.chanx.examples.dao.impl.AccountDaoImpl"></bean>
+<!--    <bean id="accountDao" class="com.chanx.examples.dao.impl.AccountDaoImpl"></bean>-->
 
 <!--    第二种方式，使用普通工厂中的方法创建对象（使用某个类中的方法创建对象并存入spring容器）-->
 <!--    <bean id="instanceFactory" class="com.chanx.examples.factory.InstanceFactory"></bean>-->
@@ -107,18 +107,18 @@
                 map props
             结构相同，标签可以互换
 -->
-    <bean id="accountService" class="com.chanx.examples.service.impl.AccountServiceImpl2" >
-        <property name="myStrs">
-            <array>
-                <value>AAA</value>
-                <value>AAA</value>
-                <value>AAA</value>
-            </array>
-        </property>
-        <property name="myMap">
-            <map>
-                <entry key="1" value="AAA"></entry>
-            </map>
-        </property>
-    </bean>
+<!--    <bean id="accountService" class="com.chanx.examples.service.impl.AccountServiceImpl2" >-->
+<!--        <property name="myStrs">-->
+<!--            <array>-->
+<!--                <value>AAA</value>-->
+<!--                <value>AAA</value>-->
+<!--                <value>AAA</value>-->
+<!--            </array>-->
+<!--        </property>-->
+<!--        <property name="myMap">-->
+<!--            <map>-->
+<!--                <entry key="1" value="AAA"></entry>-->
+<!--            </map>-->
+<!--        </property>-->
+<!--    </bean>-->
 </beans>
