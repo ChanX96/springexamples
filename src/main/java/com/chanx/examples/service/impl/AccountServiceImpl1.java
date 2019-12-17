@@ -1,14 +1,13 @@
 package com.chanx.examples.service.impl;
 
 import com.chanx.examples.dao.AccountDao;
-import com.chanx.examples.dao.impl.AccountDaoImpl;
 import com.chanx.examples.service.AccountService;
 
 import java.util.Date;
 
 public class AccountServiceImpl1 implements AccountService {
 
-    private AccountDao accountDao = new AccountDaoImpl();
+//    private AccountDao accountDao = new AccountDaoImpl();
 
     private String name;
     private Integer age;
@@ -27,7 +26,7 @@ public class AccountServiceImpl1 implements AccountService {
     }
 
     public void saveAccount() {
-        accountDao.saveAccount();
+//        accountDao.saveAccount();
         System.out.println(name + " " + age + " " + birthday);
     }
 }

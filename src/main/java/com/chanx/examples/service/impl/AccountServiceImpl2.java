@@ -1,14 +1,14 @@
 package com.chanx.examples.service.impl;
 
 import com.chanx.examples.dao.AccountDao;
-import com.chanx.examples.dao.impl.AccountDaoImpl;
+//import com.chanx.examples.dao.impl.AccountDaoImpl;
 import com.chanx.examples.service.AccountService;
 
 import java.util.*;
 
 public class AccountServiceImpl2 implements AccountService {
 
-    private AccountDao accountDao = new AccountDaoImpl();
+//    private AccountDao accountDao = new AccountDaoImpl();
 
     private String[] myStrs;
     private List<String> myList;
@@ -42,6 +42,6 @@ public class AccountServiceImpl2 implements AccountService {
         System.out.println(myMap);
         System.out.println(myProps);
         System.out.println(mySet);
-        accountDao.saveAccount();
+//        accountDao.saveAccount();
     }
 }

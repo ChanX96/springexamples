@@ -32,14 +32,15 @@ public class Client {
 
         // 2. 根据id获取bean对象
         AccountService as = (AccountService)ac.getBean("accountService");
-        AccountDao ad = ac.getBean("accountDao", AccountDao.class);
+//        AccountDao ad = ac.getBean("accountDao", AccountDao.class);
 //        AccountService as = (AccountService)factory.getBean("accountService");
 //        AccountDao ad = factory.getBean("accountDao", AccountDao.class);
+//        AccountService as = (AccountService)ac.getBean("accountServiceImpl"); // 默认注解
 
         as.saveAccount();
-        System.out.println(ad);
+//        System.out.println(ad);
 
         // 手动关闭容器
-//        ac.close();
+        ac.close();
     }
 }
